@@ -1,3 +1,5 @@
+import os
+
 def find_max_joltage(bank, num_digits=12):
     n = len(bank)
     result = []
@@ -15,7 +17,10 @@ def find_max_joltage(bank, num_digits=12):
         start = max_pos + 1
     return int(''.join(result))
 
-with open('input.txt') as f:
+script_path = os.path.dirname(os.path.abspath(__file__))
+input_file = os.path.join(script_path, "input.txt")
+
+with open(input_file) as f:
     lines = f.read().strip().split('\n')
 
 total = 0

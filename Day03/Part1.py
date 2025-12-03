@@ -1,3 +1,5 @@
+import os
+
 def find_max_joltage(bank):
     max_joltage = 0
     n = len(bank)
@@ -7,7 +9,10 @@ def find_max_joltage(bank):
             max_joltage = max(max_joltage, joltage)
     return max_joltage
 
-with open('input.txt') as f:
+script_path = os.path.dirname(os.path.abspath(__file__))
+input_file = os.path.join(script_path, "input.txt")
+
+with open(input_file) as f:
     lines = f.read().strip().split('\n')
 
 total = 0
